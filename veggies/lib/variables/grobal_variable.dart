@@ -17,4 +17,36 @@ class GlobalVariables {
   static const Color greyBackgroundCOlor = Color(0xffebecee);
   static var selectedNavBarColor = Colors.cyan[800]!;
   static const unselectedNavBarColor = Colors.black87;
+
+// STATIC IMAGES
+  static const List<String> carouselImages = [
+    'https://images.app.goo.gl/6bgSmCcy8UgA7bJV6',
+    'https://images.app.goo.gl/wnwHX48ZPdvVBfrYA',
+    'https://images.app.goo.gl/ATjT8thpbevmFjVZA',
+    'https://images.app.goo.gl/nR8MBXKWZbDLaWEY8',
+    'https://images.app.goo.gl/D75AvGkge1U73x7Q6',
+  ];
+
+  static const List<Map<String, String>> categoryImages = [
+    {
+      'title': 'Fruits',
+      'image': 'assets/images/fruits.png',
+    },
+    {
+      'title': 'Vegetables',
+      'image': 'assets/images/veget.png',
+    },
+    {
+      'title': 'Potatoes',
+      'image': 'assets/images/patato.png',
+    },
+    {
+      'title': 'Legume',
+      'image': 'assets/images/legume.png',
+    },
+    {
+      'title': 'Corn',
+      'image': 'assets/images/corn.png',
+    },
+  ];
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:veggies/features/account/widgets/below_app_bar.dart';
 import 'package:veggies/variables/grobal_variable.dart';
 
 class AccountScreen extends StatelessWidget {
@@ -21,7 +22,7 @@ class AccountScreen extends StatelessWidget {
               Container(
                 alignment: Alignment.topLeft,
                 child: Image.asset(
-                  'assets/images/amazon_in.png',
+                  'assets/images/logo.png',
                   width: 120,
                   height: 45,
                   color: Colors.black,
@@ -47,7 +48,7 @@ class AccountScreen extends StatelessWidget {
       ),
       body: Column(
         children: const [
-        //  BelowAppBar(),
+        BelowAppBar(),
           SizedBox(height: 10),
          // TopButtons(),
           SizedBox(height: 20),

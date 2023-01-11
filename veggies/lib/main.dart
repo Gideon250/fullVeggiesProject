@@ -49,7 +49,7 @@ class MyApp extends StatefulWidget {
           //? Provider.of<UserProvider>(context).user.type == 'user'
               ? const BottomBar()
               //: const AdminScreen()
-          : const AuthScreen()
+          : const AuthScreen(),
     );
   }
 }
