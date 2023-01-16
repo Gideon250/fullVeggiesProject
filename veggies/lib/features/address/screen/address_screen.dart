@@ -1,10 +1,11 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_pay/flutter_pay.dart';
 import 'package:provider/provider.dart';
 import 'package:veggies/common/widgets/custom_textfield.dart';
+import 'package:veggies/features/address/service/address_service.dart';
 import 'package:veggies/providers/user_provider.dart';
 import 'package:veggies/variables/grobal_variable.dart';
-import 'package:pay/pay.dart';
 import 'package:veggies/variables/utils.dart';
 
 class AddressScreen extends StatefulWidget {
@@ -27,19 +28,19 @@ class _AddressScreenState extends State<AddressScreen> {
   final _addressFormKey = GlobalKey<FormState>();
 
   String addressToBeUsed = "";
-  List<PaymentItem> paymentItems = [];
+ List<PaymentItem> paymentItems = [];
   final AddressServices addressServices = AddressServices();
 
   @override
   void initState() {
     super.initState();
-    paymentItems.add(
-      PaymentItem(
-        amount: widget.totalAmount,
-        label: 'Total Amount',
-        status: PaymentItemStatus.final_price,
-      ),
-    );
+   // paymentItems.add(
+      // PaymentItem(
+      //   amount: widget.totalAmount,
+      //   label: 'Total Amount',
+      //   status: PaymentItemStatus.final_price,
+      // ),
+   // );
   }
 
   @override
@@ -180,31 +181,31 @@ class _AddressScreenState extends State<AddressScreen> {
                   ],
                 ),
               ),
-              ApplePayButton(
-                width: double.infinity,
-                style: ApplePayButtonStyle.whiteOutline,
-                type: ApplePayButtonType.buy,
-                paymentConfigurationAsset: 'applepay.json',
-                onPaymentResult: onApplePayResult,
-                paymentItems: paymentItems,
-                margin: const EdgeInsets.only(top: 15),
-                height: 50,
-                onPressed: () => payPressed(address),
-              ),
-              const SizedBox(height: 10),
-              GooglePayButton(
-                onPressed: () => payPressed(address),
-                paymentConfigurationAsset: 'gpay.json',
-                onPaymentResult: onGooglePayResult,
-                paymentItems: paymentItems,
-                height: 50,
-                style: GooglePayButtonStyle.black,
-                type: GooglePayButtonType.buy,
-                margin: const EdgeInsets.only(top: 15),
-                loadingIndicator: const Center(
-                  child: CircularProgressIndicator(),
-                ),
-              ),
+              // ApplePayButton(
+              //   width: double.infinity,
+              //   style: ApplePayButtonStyle.whiteOutline,
+              //   type: ApplePayButtonType.buy,
+              //   paymentConfigurationAsset: 'applepay.json',
+              //   onPaymentResult: onApplePayResult,
+              //   paymentItems: paymentItems,
+              //   margin: const EdgeInsets.only(top: 15),
+              //   height: 50,
+              //   onPressed: () => payPressed(address),
+              // ),
+              // const SizedBox(height: 10),
+              // GooglePayButton(
+              //   onPressed: () => payPressed(address),
+              //   paymentConfigurationAsset: 'gpay.json',
+              //   onPaymentResult: onGooglePayResult,
+              //   paymentItems: paymentItems,
+              //   height: 50,
+              //   style: GooglePayButtonStyle.black,
+              //   type: GooglePayButtonType.buy,
+              //   margin: const EdgeInsets.only(top: 15),
+              //   loadingIndicator: const Center(
+              //     child: CircularProgressIndicator(),
+              //   ),
+              // ),
             ],
           ),
         ),

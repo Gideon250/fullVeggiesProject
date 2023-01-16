@@ -1,5 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:veggies/features/admin/screens/anlyticScreen.dart';
+import 'package:veggies/features/admin/screens/orderScreen.dart';
+import 'package:veggies/features/admin/screens/post_screen.dart';
 import 'package:veggies/variables/grobal_variable.dart';
 
 class AdminScreen extends StatefulWidget {
@@ -15,9 +18,9 @@ class _AdminScreenState extends State<AdminScreen> {
   double bottomBarBorderWidth = 5;
 
   List<Widget> pages = [
-   // const PostsScreen(),
-    //const AnalyticsScreen(),
-    //const OrdersScreen(),
+   const PostsScreen(),
+    const AnalyticsScreen(),
+    const OrdersScreen(),
   ];
 
   void updatePage(int page) {

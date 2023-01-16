@@ -5,8 +5,10 @@ import 'package:veggies/features/admin/screens/add_product_screen.dart';
 import 'package:veggies/features/auth/screens/auth_screen.dart';
 import 'package:veggies/features/home/screens/category_deals_screen.dart';
 import 'package:veggies/features/home/screens/home_screen.dart';
+import 'package:veggies/features/order_details/screen_details/order_details.dart';
 import 'package:veggies/features/product_details/screens/product_detail_screen.dart';
 import 'package:veggies/features/search/screen/search_screen.dart';
+import 'package:veggies/models/order.dart';
 import 'package:veggies/models/product.dart';
 
 Route<dynamic> generateRoute(RouteSettings routeSettings) {
@@ -65,14 +67,14 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
           totalAmount: totalAmount,
         ),
       );
-    // case OrderDetailScreen.routeName:
-    //   var order = routeSettings.arguments as Order;
-    //   return MaterialPageRoute(
-    //     settings: routeSettings,
-    //     builder: (_) => OrderDetailScreen(
-    //       order: order,
-    //     ),
-    //   );
+    case OrderDetailScreen.routeName:
+      var order = routeSettings.arguments as Order;
+      return MaterialPageRoute(
+        settings: routeSettings,
+        builder: (_) => OrderDetailScreen(
+          order: order,
+        ),
+      );
     default:
       return MaterialPageRoute(
         settings: routeSettings,

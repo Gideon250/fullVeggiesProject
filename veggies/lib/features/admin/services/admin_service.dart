@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:cloudinary_public/cloudinary_public.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:veggies/features/admin/models/sales.dart';
 import 'package:veggies/models/order.dart';
 import 'package:veggies/models/product.dart';
 import 'package:veggies/providers/user_provider.dart';
@@ -26,7 +27,7 @@ class AdminServices {
     final userProvider = Provider.of<UserProvider>(context, listen: false);
 
     try {
-      final cloudinary = CloudinaryPublic('dhpqfz1ny', 'q6wgsciq');
+      final cloudinary = CloudinaryPublic('denfgaxvg', 'uszbstnu');
       List<String> imageUrls = [];
 
       for (int i = 0; i < images.length; i++) {
@@ -51,7 +52,7 @@ class AdminServices {
           'Content-Type': 'application/json; charset=UTF-8',
           'x-auth-token': userProvider.user.token,
         },
-       body: product.toJson(),
+        body: product.toJson(),
       );
 
       httpErrorHandle(
@@ -210,11 +211,11 @@ class AdminServices {
           var response = jsonDecode(res.body);
           totalEarning = response['totalEarnings'];
           sales = [
-            Sales('Fruits', response['FruitsEarnings']),
-            Sales('Vegetables', response['vegatablesEarnings']),
-            Sales('Potatoes', response['potatoesEarnings']),
-            Sales('Legume', response['legumeEarnings']),
-            Sales('Corn', response['cornEarnings']),
+            Sales('Mobiles', response['mobileEarnings']),
+            Sales('Essentials', response['essentialEarnings']),
+            Sales('Books', response['booksEarnings']),
+            Sales('Appliances', response['applianceEarnings']),
+            Sales('Fashion', response['fashionEarnings']),
           ];
         },
       );
